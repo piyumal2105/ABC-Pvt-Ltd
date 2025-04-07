@@ -1,0 +1,838 @@
+/* Base Styles and Variables */
+:root {
+  --navy-blue: #0a2342;
+  --rich-gold: #cf9f52;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: var(--rich-gold);
+  color: var(--navy-blue);
+  border: 2px solid var(--rich-gold);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--rich-gold);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--navy-blue);
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--navy-blue);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  color: var(--rich-gold);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--rich-gold);
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-color: var(--navy-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider {
+  height: 100%;
+  width: 400%;
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.hero-slide {
+  height: 100%;
+  width: 25%;
+  position: relative;
+}
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 35, 66, 0.7);
+  z-index: 1;
+}
+
+.hero-slide:nth-child(1) {
+  background: url("images/lab.jpg") center/cover no-repeat;
+}
+
+.hero-slide:nth-child(2) {
+  background: url("images/fishing.jpg") center/cover no-repeat;
+}
+
+.hero-slide:nth-child(3) {
+  background: url("images/agriculture.jpg") center/cover no-repeat;
+}
+
+.hero-slide:nth-child(4) {
+  background: url("images/logistics.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+  z-index: 2;
+  width: 80%;
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: var(--rich-gold);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Slider Navigation */
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: var(--rich-gold);
+}
+
+/* Section Styles */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--navy-blue);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--rich-gold);
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+}
+
+/* Who We Are Section */
+.who-we-are {
+  padding: 100px 0;
+  background-color: var(--light-gray);
+  text-align: center;
+}
+
+.world-map {
+  position: relative;
+  height: 400px;
+  background: url("images/world-map.png") center/contain no-repeat;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.location-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--rich-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.location-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(207, 159, 82, 0.3);
+  transition: all 0.5s ease;
+}
+
+.location-marker:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.location-marker:hover::after {
+  width: 40px;
+  height: 40px;
+}
+
+.location-marker.sri-lanka {
+  top: 55%;
+  left: 70%;
+}
+
+.location-marker.europe {
+  top: 35%;
+  left: 48%;
+}
+
+.location-marker.africa {
+  top: 55%;
+  left: 45%;
+}
+
+.location-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--navy-blue);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.location-marker:hover .location-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+/* Industries Section */
+.industries {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.industries-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.industries-carousel {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.industries-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.industry-card {
+  min-width: 280px;
+  max-width: 280px;
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.industry-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.industry-card:nth-child(1) .industry-image {
+  background-image: url("images/pharma.jpg");
+}
+
+.industry-card:nth-child(2) .industry-image {
+  background-image: url("images/seafood.jpg");
+}
+
+.industry-card:nth-child(3) .industry-image {
+  background-image: url("images/aquaculture.jpg");
+}
+
+.industry-card:nth-child(4) .industry-image {
+  background-image: url("images/agriculture-card.jpg");
+}
+
+.industry-card:nth-child(5) .industry-image {
+  background-image: url("images/trade.jpg");
+}
+
+.industry-content {
+  padding: 20px;
+}
+
+.industry-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--navy-blue);
+}
+
+.industry-description {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.industry-link {
+  display: inline-block;
+  color: var(--rich-gold);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.industry-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--rich-gold);
+  transition: all 0.3s ease;
+}
+
+.industry-link:hover::after {
+  width: 100%;
+}
+
+/* Philosophy Section */
+.philosophy {
+  padding: 100px 0;
+  background-color: var(--navy-blue);
+  color: var(--white);
+  text-align: center;
+}
+
+.philosophy .section-title {
+  color: var(--white);
+}
+
+.philosophy-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.philosophy-item {
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.philosophy-item:hover {
+  transform: translateY(-10px);
+}
+
+.philosophy-icon {
+  font-size: 3rem;
+  color: var(--rich-gold);
+  margin-bottom: 20px;
+}
+
+.philosophy-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.philosophy-description {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Partner Section */
+.partner {
+  padding: 100px 0;
+  background-color: var(--light-gray);
+}
+
+.partner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partner-text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.partner-heading {
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  margin-bottom: 20px;
+}
+
+.partner-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.partner-cta {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+.partner-cta .btn {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy-blue);
+  color: var(--white);
+  padding: 60px 0 20px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-column h3 {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: var(--rich-gold);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--rich-gold);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--rich-gold);
+  padding-left: 5px;
+}
+
+.footer-contact p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-contact i {
+  margin-right: 15px;
+  color: var(--rich-gold);
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: var(--rich-gold);
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .world-map {
+    height: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .partner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .philosophy-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--navy-blue);
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .industry-card {
+    min-width: 280px;
+  }
+
+  .industries-carousel {
+    padding-bottom: 30px;
+    /* Add visual indicator for swipe */
+    position: relative;
+  }
+
+  .industries-carousel::after {
+    content: "Swipe for more ›";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--navy-blue);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .world-map {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .partner-heading {
+    font-size: 1.8rem;
+  }
+
+  .philosophy-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-item {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-contact p {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .world-map {
+    height: 250px;
+  }
+
+  /* Make section paddings more compact on mobile */
+  .who-we-are,
+  .industries,
+  .philosophy,
+  .partner {
+    padding: 60px 0;
+  }
+}
+
+/* Additional responsive touches for very small screens */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-content {
+    width: 95%;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
