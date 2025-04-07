@@ -165,19 +165,19 @@ nav ul li a:hover {
 }
 
 .hero-slide:nth-child(1) {
-  background: url("images/lab.jpg") center/cover no-repeat;
+  background: url("../images/lab.jpg") center/cover no-repeat;
 }
 
 .hero-slide:nth-child(2) {
-  background: url("images/fishing.jpg") center/cover no-repeat;
+  background: url("../images/fishing.jpg") center/cover no-repeat;
 }
 
 .hero-slide:nth-child(3) {
-  background: url("images/agriculture.jpg") center/cover no-repeat;
+  background: url("../images/agriculture.jpg") center/cover no-repeat;
 }
 
 .hero-slide:nth-child(4) {
-  background: url("images/logistics.jpg") center/cover no-repeat;
+  background: url("../images/logistics.jpg") center/cover no-repeat;
 }
 
 .hero-content {
@@ -404,23 +404,23 @@ nav ul li a:hover {
 }
 
 .industry-card:nth-child(1) .industry-image {
-  background-image: url("images/pharma.jpg");
+  background-image: url("../images/pharma.jpg");
 }
 
 .industry-card:nth-child(2) .industry-image {
-  background-image: url("images/seafood.jpg");
+  background-image: url("../images/seafood.jpg");
 }
 
 .industry-card:nth-child(3) .industry-image {
-  background-image: url("images/aquaculture.jpg");
+  background-image: url("../images/aquaculture.jpg");
 }
 
 .industry-card:nth-child(4) .industry-image {
-  background-image: url("images/agriculture-card.jpg");
+  background-image: url("../images/agriculturecard.jpg");
 }
 
 .industry-card:nth-child(5) .industry-image {
-  background-image: url("images/trade.jpg");
+  background-image: url("../images/trade.jpg");
 }
 
 .industry-content {
