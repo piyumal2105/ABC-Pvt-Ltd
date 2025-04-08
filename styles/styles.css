@@ -281,8 +281,8 @@ nav ul li a:hover {
 
 .world-map {
   position: relative;
-  height: 400px;
-  background: url("images/world-map.png") center/contain no-repeat;
+  height: 450px;
+  background: url("../images//world-map.webp") center/contain no-repeat;
   margin: 0 auto;
   max-width: 900px;
 }

@@ -25,7 +25,7 @@
     <!-- Header -->
     <header>
       <div class="container header-container">
-        <a href="index.html" class="logo">ABC <span>(Pvt) Ltd</span></a>
+        <a href="../index.html" class="logo">ABC <span>(Pvt) Ltd</span></a>
         <div class="mobile-menu-btn">
           <i class="fas fa-bars"></i>
         </div>
@@ -228,7 +228,13 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 ABC (Pvt) Ltd. All Rights Reserved.</p>
+          <p>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            ABC (Pvt) Ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
